@@ -9,5 +9,25 @@
 import UIKit
 
 class HeadLinesViewModel: NSObject {
+    
+    private var headLineModel: HeadLinesModel?
+    
+    var numberOfItems: Int {
+        return headLineModel?.articles?.count ?? 0
+    }
+    
+    func getItem(for index: Int) -> Articles? {
+      let article = headLineModel?.articles?[index]
+        return article
+    }
+    
+    func fetchHeadLines(completion: @escaping SuccessCompletionBlock) {
+        NetworkManager.getHeadLines {[weak self] (isSuccess, model) in
+            self?.headLineModel = model
+            DispatchQueue.main.async {
+                completion(isSuccess)
+            }
+        }
+    }
 
 }

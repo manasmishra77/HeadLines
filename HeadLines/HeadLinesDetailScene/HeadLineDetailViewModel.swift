@@ -9,5 +9,10 @@
 import UIKit
 
 class HeadLineDetailViewModel: NSObject {
+    var article: Articles!
+    init(_ article: Articles) {
+        self.article = article
+        super.init()
+    }
 
 }
