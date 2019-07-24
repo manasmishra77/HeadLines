@@ -20,6 +20,10 @@ class HeadLinesCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
+    func configureCell(_ article: Articles?) {
+        
+    }
+    
     
 
 }

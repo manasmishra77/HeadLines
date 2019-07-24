@@ -42,6 +42,15 @@ class Utility {
 //This will provide sizes for all the viewcontroller related views
 struct Size {
     struct HeadlinesVC {
+        static var collectionViewSectionInset: UIEdgeInsets {
+            return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        }
+        static var collectionViewItemSize: CGSize {
+            return CGSize.zero
+        }
+        static var collectionViewLineSpacing: CGFloat {
+            return 20
+        }
         
     }
     struct HeadlineDetailVC {
