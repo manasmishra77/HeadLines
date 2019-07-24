@@ -34,7 +34,18 @@ extension UIView {
 }
 
 class Utility {
-    
+    //Converting the datestring from server response to required fromat
+    class func convertUTCDateToDateString(_ dateString: String?) -> String? {
+        guard let dateString = dateString else { return nil }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+        guard let date = dateFormatter.date(from: dateString) else { return nil }
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone.current
+        let localString = dateFormatter.string(from: date)
+        return localString
+    }
     
    
 }

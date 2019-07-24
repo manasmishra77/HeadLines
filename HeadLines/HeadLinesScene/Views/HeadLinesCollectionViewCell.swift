@@ -21,9 +21,10 @@ class HeadLinesCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(_ article: Articles?) {
-        
+        newsHeadingLabel.text = article?.title
+        newsSourceLabel.text = article?.author
+        newsDateLabel.text = Utility.convertUTCDateToDateString(article?.publishedAt)
     }
-    
-    
 
 }
+
