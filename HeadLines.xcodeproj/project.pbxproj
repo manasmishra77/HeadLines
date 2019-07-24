@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1995182322E82ED2007CC79B /* HeadLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995182122E82ED2007CC79B /* HeadLinesViewController.swift */; };
+		1995182422E82ED2007CC79B /* HeadLinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1995182222E82ED2007CC79B /* HeadLinesViewController.xib */; };
+		1995182622E82EF3007CC79B /* HeadLinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995182522E82EF3007CC79B /* HeadLinesViewModel.swift */; };
+		1995182A22E82F24007CC79B /* HeadLineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995182822E82F24007CC79B /* HeadLineDetailViewController.swift */; };
+		1995182B22E82F24007CC79B /* HeadLineDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1995182922E82F24007CC79B /* HeadLineDetailViewController.xib */; };
+		1995182D22E82F54007CC79B /* HeadLineDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995182C22E82F54007CC79B /* HeadLineDetailViewModel.swift */; };
+		1995183222E82FAF007CC79B /* HeadLinesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995183022E82FAF007CC79B /* HeadLinesCollectionViewCell.swift */; };
+		1995183322E82FAF007CC79B /* HeadLinesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1995183122E82FAF007CC79B /* HeadLinesCollectionViewCell.xib */; };
+		1995183922E832F1007CC79B /* RobotoSlab-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1995183522E832F0007CC79B /* RobotoSlab-Light.ttf */; };
+		1995183A22E832F1007CC79B /* RobotoSlab-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1995183622E832F1007CC79B /* RobotoSlab-Thin.ttf */; };
+		1995183B22E832F1007CC79B /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1995183722E832F1007CC79B /* RobotoSlab-Bold.ttf */; };
+		1995183C22E832F1007CC79B /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1995183822E832F1007CC79B /* RobotoSlab-Regular.ttf */; };
 		B6838F7022E6B920004C6368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6838F6F22E6B920004C6368 /* AppDelegate.swift */; };
 		B6838F7222E6B920004C6368 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6838F7122E6B920004C6368 /* SceneDelegate.swift */; };
 		B6838F7422E6B920004C6368 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6838F7322E6B920004C6368 /* ViewController.swift */; };
@@ -38,6 +50,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1995182122E82ED2007CC79B /* HeadLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesViewController.swift; sourceTree = "<group>"; };
+		1995182222E82ED2007CC79B /* HeadLinesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadLinesViewController.xib; sourceTree = "<group>"; };
+		1995182522E82EF3007CC79B /* HeadLinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesViewModel.swift; sourceTree = "<group>"; };
+		1995182822E82F24007CC79B /* HeadLineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLineDetailViewController.swift; sourceTree = "<group>"; };
+		1995182922E82F24007CC79B /* HeadLineDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadLineDetailViewController.xib; sourceTree = "<group>"; };
+		1995182C22E82F54007CC79B /* HeadLineDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLineDetailViewModel.swift; sourceTree = "<group>"; };
+		1995183022E82FAF007CC79B /* HeadLinesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesCollectionViewCell.swift; sourceTree = "<group>"; };
+		1995183122E82FAF007CC79B /* HeadLinesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadLinesCollectionViewCell.xib; sourceTree = "<group>"; };
+		1995183522E832F0007CC79B /* RobotoSlab-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Light.ttf"; sourceTree = "<group>"; };
+		1995183622E832F1007CC79B /* RobotoSlab-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Thin.ttf"; sourceTree = "<group>"; };
+		1995183722E832F1007CC79B /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Bold.ttf"; sourceTree = "<group>"; };
+		1995183822E832F1007CC79B /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
 		B6838F6C22E6B920004C6368 /* HeadLines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadLines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6838F6F22E6B920004C6368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6838F7122E6B920004C6368 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +106,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1995182022E82E4F007CC79B /* HeadLinesScene */ = {
+			isa = PBXGroup;
+			children = (
+				1995182F22E82F77007CC79B /* ViewModel */,
+				1995182E22E82F66007CC79B /* Views */,
+				1995182122E82ED2007CC79B /* HeadLinesViewController.swift */,
+			);
+			path = HeadLinesScene;
+			sourceTree = "<group>";
+		};
+		1995182722E82EFA007CC79B /* HeadLinesDetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				1995182822E82F24007CC79B /* HeadLineDetailViewController.swift */,
+				1995182922E82F24007CC79B /* HeadLineDetailViewController.xib */,
+				1995182C22E82F54007CC79B /* HeadLineDetailViewModel.swift */,
+			);
+			path = HeadLinesDetailScene;
+			sourceTree = "<group>";
+		};
+		1995182E22E82F66007CC79B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1995182222E82ED2007CC79B /* HeadLinesViewController.xib */,
+				1995183022E82FAF007CC79B /* HeadLinesCollectionViewCell.swift */,
+				1995183122E82FAF007CC79B /* HeadLinesCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1995182F22E82F77007CC79B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1995182522E82EF3007CC79B /* HeadLinesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1995183422E832D6007CC79B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1995183722E832F1007CC79B /* RobotoSlab-Bold.ttf */,
+				1995183522E832F0007CC79B /* RobotoSlab-Light.ttf */,
+				1995183822E832F1007CC79B /* RobotoSlab-Regular.ttf */,
+				1995183622E832F1007CC79B /* RobotoSlab-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B6838F6322E6B920004C6368 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +178,8 @@
 		B6838F6E22E6B920004C6368 /* HeadLines */ = {
 			isa = PBXGroup;
 			children = (
+				1995182722E82EFA007CC79B /* HeadLinesDetailScene */,
+				1995182022E82E4F007CC79B /* HeadLinesScene */,
 				B6838F9F22E6BC50004C6368 /* Utilities */,
 				B6838F6F22E6B920004C6368 /* AppDelegate.swift */,
 				B6838F7122E6B920004C6368 /* SceneDelegate.swift */,
@@ -138,6 +213,7 @@
 		B6838F9F22E6BC50004C6368 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1995183422E832D6007CC79B /* Fonts */,
 				B6838FA022E6BC82004C6368 /* AppManager.swift */,
 				B6838FA222E6BC9A004C6368 /* Utility.swift */,
 				B6838FA422E6BCC3004C6368 /* ImageDownLoader.swift */,
@@ -249,8 +325,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1995182422E82ED2007CC79B /* HeadLinesViewController.xib in Resources */,
+				1995183922E832F1007CC79B /* RobotoSlab-Light.ttf in Resources */,
+				1995182B22E82F24007CC79B /* HeadLineDetailViewController.xib in Resources */,
 				B6838F7C22E6B923004C6368 /* LaunchScreen.storyboard in Resources */,
 				B6838F7922E6B923004C6368 /* Assets.xcassets in Resources */,
+				1995183B22E832F1007CC79B /* RobotoSlab-Bold.ttf in Resources */,
+				1995183C22E832F1007CC79B /* RobotoSlab-Regular.ttf in Resources */,
+				1995183322E82FAF007CC79B /* HeadLinesCollectionViewCell.xib in Resources */,
+				1995183A22E832F1007CC79B /* RobotoSlab-Thin.ttf in Resources */,
 				B6838F7722E6B921004C6368 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,9 +361,14 @@
 			files = (
 				B6838FA322E6BC9A004C6368 /* Utility.swift in Sources */,
 				B6838F7422E6B920004C6368 /* ViewController.swift in Sources */,
+				1995182A22E82F24007CC79B /* HeadLineDetailViewController.swift in Sources */,
 				B6838FA522E6BCC3004C6368 /* ImageDownLoader.swift in Sources */,
 				B6838F7022E6B920004C6368 /* AppDelegate.swift in Sources */,
+				1995182D22E82F54007CC79B /* HeadLineDetailViewModel.swift in Sources */,
+				1995182622E82EF3007CC79B /* HeadLinesViewModel.swift in Sources */,
 				B6838F7222E6B920004C6368 /* SceneDelegate.swift in Sources */,
+				1995182322E82ED2007CC79B /* HeadLinesViewController.swift in Sources */,
+				1995183222E82FAF007CC79B /* HeadLinesCollectionViewCell.swift in Sources */,
 				B6838FA122E6BC82004C6368 /* AppManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

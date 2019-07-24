@@ -9,5 +9,15 @@
 import Foundation
 
 class Utility {
-    
+   
+}
+
+//This will provide sizes for all the viewcontroller related views
+struct Size {
+    struct HeadlinesVC {
+        
+    }
+    struct HeadlineDetailVC {
+        
+    }
 }
