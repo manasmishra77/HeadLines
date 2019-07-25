@@ -7,56 +7,76 @@
 //
 
 import Foundation
+import CoreData
 
-struct HeadLinesModel : Codable {
-    let status : String?
-    let totalResults : Int?
-    let articles : [Articles]?
+
+public class HeadLines : NSManagedObject, Codable {
+    @NSManaged public var status : String?
+    //@NSManaged public var totalResults : Int32?
+    @NSManaged public var articles : [Articles]?
     
     enum CodingKeys: String, CodingKey {
         
         case status = "status"
-        case totalResults = "totalResults"
+       // case totalResults = "totalResults"
         case articles = "articles"
     }
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(status, forKey: .status)
+       // try container.encode(totalResults, forKey: .totalResults)
+        try container.encode(articles, forKey: .articles)
+    }
     
-    init(from decoder: Decoder) throws {
+    required public init(from decoder: Decoder) throws {
+        super.init(entity: NSEntityDescription(), insertInto: nil)
         let values = try decoder.container(keyedBy: CodingKeys.self)
         status = try values.decodeIfPresent(String.self, forKey: .status)
-        totalResults = try values.decodeIfPresent(Int.self, forKey: .totalResults)
+       // totalResults = try values.decodeIfPresent(Int32.self, forKey: .totalResults)
         articles = try values.decodeIfPresent([Articles].self, forKey: .articles)
     }
     
 }
 
-struct Articles : Codable {
-    let source : Source?
-    let author : String?
-    let title : String?
-    let description : String?
-    let url : String?
-    let urlToImage : String?
-    let publishedAt : String?
-    let content : String?
+public class Articles : NSManagedObject, Codable {
+    @NSManaged public var source : Source?
+    @NSManaged public var author : String?
+    @NSManaged public var title : String?
+    @NSManaged public var descriptionOfContent : String?
+    @NSManaged public var url : String?
+    @NSManaged public var urlToImage : String?
+    @NSManaged public var publishedAt : String?
+    @NSManaged public var content : String?
     
     enum CodingKeys: String, CodingKey {
         
         case source = "source"
         case author = "author"
         case title = "title"
-        case description = "description"
+        case descriptionOfContent = "description"
         case url = "url"
         case urlToImage = "urlToImage"
         case publishedAt = "publishedAt"
         case content = "content"
     }
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(source, forKey: .source)
+        try container.encode(author, forKey: .author)
+        try container.encode(title, forKey: .title)
+        try container.encode(descriptionOfContent, forKey: .descriptionOfContent)
+        try container.encode(url, forKey: .url)
+        try container.encode(urlToImage, forKey: .urlToImage)
+        try container.encode(publishedAt, forKey: .publishedAt)
+    }
     
-    init(from decoder: Decoder) throws {
+    required public init(from decoder: Decoder) throws {
+        super.init(entity: NSEntityDescription(), insertInto: nil)
         let values = try decoder.container(keyedBy: CodingKeys.self)
         source = try values.decodeIfPresent(Source.self, forKey: .source)
         author = try values.decodeIfPresent(String.self, forKey: .author)
         title = try values.decodeIfPresent(String.self, forKey: .title)
-        description = try values.decodeIfPresent(String.self, forKey: .description)
+        descriptionOfContent = try values.decodeIfPresent(String.self, forKey: .descriptionOfContent)
         url = try values.decodeIfPresent(String.self, forKey: .url)
         urlToImage = try values.decodeIfPresent(String.self, forKey: .urlToImage)
         publishedAt = try values.decodeIfPresent(String.self, forKey: .publishedAt)
@@ -66,9 +86,9 @@ struct Articles : Codable {
 }
 
 
-struct Source : Codable {
-    let id : String?
-    let name : String?
+public class Source : NSManagedObject, Codable {
+    @NSManaged public var  id : String?
+    @NSManaged public var name : String?
     
     enum CodingKeys: String, CodingKey {
         
@@ -76,7 +96,13 @@ struct Source : Codable {
         case name = "name"
     }
     
-    init(from decoder: Decoder) throws {
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(id, forKey: .id)
+    }
+    required public init(from decoder: Decoder) throws {
+        super.init(entity: NSEntityDescription(), insertInto: nil)
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(String.self, forKey: .id)
         name = try values.decodeIfPresent(String.self, forKey: .name)

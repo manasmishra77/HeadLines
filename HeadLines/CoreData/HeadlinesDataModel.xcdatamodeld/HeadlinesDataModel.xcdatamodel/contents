@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="19A471t" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Articles" representedClassName=".Articles" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descriptionOfContent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishedAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urlToImage" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="source" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Source" syncable="YES"/>
+    </entity>
+    <entity name="HeadLines" representedClassName=".HeadLines" syncable="YES">
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="articles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Articles" syncable="YES"/>
+    </entity>
+    <entity name="Source" representedClassName=".Source" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="HeadLines" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Articles" positionX="-681.3359375" positionY="298.0390625" width="128" height="30"/>
+        <element name="Source" positionX="345.52734375" positionY="310.80859375" width="128" height="30"/>
+    </elements>
+</model>
