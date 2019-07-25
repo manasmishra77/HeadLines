@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias ResponseSuccessBlock = (_ isSuccess: Bool, _ model: HeadLinesModel?) -> Void
+typealias ResponseSuccessBlock = (_ isSuccess: Bool, _ model: HeadLines?) -> Void
 typealias SuccessCompletionBlock   = (_ isSuccess: Bool) -> Void
 
 let HeadlinesCellNibIdentifier = "HeadLinesCollectionViewCell"

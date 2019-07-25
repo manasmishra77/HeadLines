@@ -29,7 +29,10 @@ public class HeadLines : NSManagedObject, Codable {
     }
     
     required public init(from decoder: Decoder) throws {
-        super.init(entity: NSEntityDescription(), insertInto: nil)
+        let moc = CoreDataStack.sharedInstance.managedObjectContext
+        let entityDesc = NSEntityDescription.entity(forEntityName: "HeadLines", in: moc)
+        super.init(entity: entityDesc!, insertInto: moc)
+        
         let values = try decoder.container(keyedBy: CodingKeys.self)
         status = try values.decodeIfPresent(String.self, forKey: .status)
        // totalResults = try values.decodeIfPresent(Int32.self, forKey: .totalResults)
@@ -49,7 +52,6 @@ public class Articles : NSManagedObject, Codable {
     @NSManaged public var content : String?
     
     enum CodingKeys: String, CodingKey {
-        
         case source = "source"
         case author = "author"
         case title = "title"
@@ -71,7 +73,10 @@ public class Articles : NSManagedObject, Codable {
     }
     
     required public init(from decoder: Decoder) throws {
-        super.init(entity: NSEntityDescription(), insertInto: nil)
+        let moc = CoreDataStack.sharedInstance.managedObjectContext
+        let entityDesc = NSEntityDescription.entity(forEntityName: "Articles", in: moc)
+        super.init(entity: entityDesc!, insertInto: moc)
+        
         let values = try decoder.container(keyedBy: CodingKeys.self)
         source = try values.decodeIfPresent(Source.self, forKey: .source)
         author = try values.decodeIfPresent(String.self, forKey: .author)
@@ -91,7 +96,6 @@ public class Source : NSManagedObject, Codable {
     @NSManaged public var name : String?
     
     enum CodingKeys: String, CodingKey {
-        
         case id = "id"
         case name = "name"
     }
@@ -102,7 +106,10 @@ public class Source : NSManagedObject, Codable {
         try container.encode(id, forKey: .id)
     }
     required public init(from decoder: Decoder) throws {
-        super.init(entity: NSEntityDescription(), insertInto: nil)
+        let moc = CoreDataStack.sharedInstance.managedObjectContext
+        let entityDesc = NSEntityDescription.entity(forEntityName: "Source", in: moc)
+        super.init(entity: entityDesc!, insertInto: moc)
+        
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decodeIfPresent(String.self, forKey: .id)
         name = try values.decodeIfPresent(String.self, forKey: .name)

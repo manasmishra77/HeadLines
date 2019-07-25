@@ -20,8 +20,9 @@ class HeadLineDetailViewController: UIViewController {
     
     var originFrame: CGRect!
     convenience init(article: Articles) {
-        viewModel = HeadLineDetailViewModel(article)
         self.init()
+        viewModel = HeadLineDetailViewModel(article)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -16,13 +16,16 @@ class NetworkManager: NSObject {
             completion?(false, nil)
             return
         }
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         let datatask = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard error != nil, let response = response as? HTTPURLResponse, response.statusCode == 200, let data = data else {
+            guard error == nil else {return}
+            guard let response = response as? HTTPURLResponse else {return}
+            guard response.statusCode == 200, let data = data else {
                 completion?(false, nil)
                 return
             }
-            if let model = try? JSONDecoder().decode(HeadLinesModel.self, from: data) {
+            if let model = try? JSONDecoder().decode(HeadLines.self, from: data) {
                 completion?(true, model)
                 return
             }

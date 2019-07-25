@@ -25,6 +25,7 @@ class HeadLinesViewController: UIViewController {
     
     private func configureViews() {
         viewModel = HeadLinesViewModel()
+        self.configureCollectionView()
         viewModel.fetchHeadLines { (isSuccess) in
             if isSuccess {
                 self.headlinesCollectionView.reloadData()
@@ -32,8 +33,6 @@ class HeadLinesViewController: UIViewController {
                 //Show error
             }
         }
-        self.configureCollectionView()
-        
     }
 
 }

@@ -11,16 +11,16 @@
         <relationship name="source" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Source" syncable="YES"/>
     </entity>
     <entity name="HeadLines" representedClassName=".HeadLines" syncable="YES">
+        <attribute name="articles" optional="YES" attributeType="Transformable" customClassName="[Articles]" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="articles" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Articles" syncable="YES"/>
     </entity>
     <entity name="Source" representedClassName=".Source" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="HeadLines" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Articles" positionX="-681.3359375" positionY="298.0390625" width="128" height="30"/>
+        <element name="Articles" positionX="-681.3359375" positionY="298.0390625" width="128" height="165"/>
+        <element name="HeadLines" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Source" positionX="345.52734375" positionY="310.80859375" width="128" height="30"/>
     </elements>
 </model>
