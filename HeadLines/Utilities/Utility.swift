@@ -33,7 +33,43 @@ extension UIView {
     }
 }
 
+struct ImagesModel: Codable {
+    var image: UIImage?
+    var isInUse: Bool = false
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        if let image = image {
+            let imageData = UIImage.jpegData(image)
+            try container.encode(imageData, imageData: .image)
+        }
+        
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case image = "image"
+        case isInUse = "isInUse"
+    }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        image = try values.decodeIfPresent(UIImage.self, forKey: .image)
+        isInUse = false
+    }
+    init() {
+        
+    }
+}
+
 class Utility {
+    static let shared = Utility()
+    private init() {}
+    
+    var fileNameForImageCache: URL {
+        var path = self.getDocumentsDirectory()
+        let fileName = path.appendingPathComponent("imageCache")
+        return fileName
+    }
+    
+    let imageCache = NSCache<NSString, UIImage>()
     //Converting the datestring from server response to required fromat
     class func convertUTCDateToDateString(_ dateString: String?) -> String? {
         guard let dateString = dateString else { return nil }
@@ -45,6 +81,20 @@ class Utility {
         dateFormatter.timeZone = TimeZone.current
         let localString = dateFormatter.string(from: date)
         return localString
+    }
+    
+    //Saving NSCache array in Disk
+    func saveNSCacheArrayInDisk() {
+        do {
+            
+        } catch {
+            // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
     }
     
    
