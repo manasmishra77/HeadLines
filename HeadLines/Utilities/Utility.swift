@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias ResponseSuccessBlock = (_ isSuccess: Bool, _ model: HeadLines?) -> Void
+typealias ResponseSuccessBlock = (_ isSuccess: Bool, _ model: HeadLinesModel?) -> Void
 typealias SuccessCompletionBlock   = (_ isSuccess: Bool) -> Void
 
 let HeadlinesCellNibIdentifier = "HeadLinesCollectionViewCell"
@@ -57,7 +57,9 @@ struct Size {
             return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         }
         static var collectionViewItemSize: CGSize {
-            return CGSize.zero
+            let width = screenWidth
+            let height: CGFloat = 300
+            return CGSize(width: width, height: height)
         }
         static var collectionViewLineSpacing: CGFloat {
             return 20

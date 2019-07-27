@@ -39,10 +39,14 @@ class HeadLineDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        dismissVC()
+    }
+    
     func dismissVC() {
         UIView.animate(withDuration: 0.3, animations: {
             self.view.frame = self.originFrame
-            self.view.alpha = 0
+            //self.view.alpha = 0
         }) { (_) in
             self.willMove(toParent: nil)
             self.view.removeFromSuperview()

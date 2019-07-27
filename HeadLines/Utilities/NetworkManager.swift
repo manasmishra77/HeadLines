@@ -25,7 +25,7 @@ class NetworkManager: NSObject {
                 completion?(false, nil)
                 return
             }
-            if let model = try? JSONDecoder().decode(HeadLines.self, from: data) {
+            if let model = try? JSONDecoder().decode(HeadLinesModel.self, from: data) {
                 completion?(true, model)
                 return
             }

@@ -2,7 +2,7 @@
 //  HeadLines+CoreDataProperties.swift
 //  HeadLines
 //
-//  Created by Manas Mishra on 25/07/19.
+//  Created by Manas Mishra on 27/07/19.
 //  Copyright © 2019 manas. All rights reserved.
 //
 //
@@ -17,8 +17,8 @@ extension HeadLines {
         return NSFetchRequest<HeadLines>(entityName: "HeadLines")
     }
 
-//    @NSManaged public var totalResults: Int64
-//    @NSManaged public var status: String?
-//    @NSManaged public var articles: Articles?
+    @NSManaged public var articles: NSData?
+    @NSManaged public var status: String?
+    
 
 }

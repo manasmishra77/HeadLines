@@ -16,13 +16,10 @@ class HeadLinesViewModel: NSObject {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: HeadLines.self))
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "status", ascending: true)]
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-        frc.delegate = self
         return frc
     }()
     
-    var completionBlock: SuccessCompletionBlock?
-    
-    private var headLineModel: HeadLines?
+    private var headLineModel: HeadLinesModel?
     
     var numberOfItems: Int {
         return headLineModel?.articles?.count ?? 0
@@ -32,26 +29,24 @@ class HeadLinesViewModel: NSObject {
       let article = headLineModel?.articles?[index]
         return article
     }
-    
     func fetchHeadLines(completion: @escaping SuccessCompletionBlock) {
-        completionBlock = completion
-        do {
-            try self.fetchedhResultController.performFetch()
-            completion(true)
-        } catch {
-            print("ERROR: \(error)")
-        }
-        
+        fetchHeadLinesModelFromCoreDataEntity() ? completion(true) : completion(false)
         NetworkManager.getHeadLines {[weak self] (isSuccess, model) in
             self?.headLineModel = model
             if isSuccess {
+                DispatchQueue.main.async {
+                    completion(true)
+                }
                 self?.clearData()
                 self?.saveInCoreData()
             }
         }
     }
-    
-    //This function is used to clear all data 
+}
+
+//Helper function related to data fetching
+extension HeadLinesViewModel {
+    //This function is used to clear all data from coredata
     private func clearData() {
         do {
             let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
@@ -65,34 +60,39 @@ class HeadLinesViewModel: NSObject {
             }
         }
     }
+    //This function is used to store all data from coredata
     private func saveInCoreData() {
+        guard let articles = self.headLineModel?.articles else {
+            return
+        }
         do {
-            try CoreDataStack.sharedInstance.persistentContainer.viewContext.save()
+            let articlesData = try JSONEncoder().encode(articles)
+            let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+            if let headLinesEntity = NSEntityDescription.insertNewObject(forEntityName: "HeadLines", into: context) as? HeadLines {
+                headLinesEntity.articles = articlesData as NSData
+                headLinesEntity.status = self.headLineModel?.status
+                try CoreDataStack.sharedInstance.persistentContainer.viewContext.save()
+            }
         } catch let error {
             print(error)
         }
     }
-
-}
-
-extension HeadLinesViewModel: NSFetchedResultsControllerDelegate {
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        completionBlock?(true)
-    }
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        
-    }
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        switch type {
-        case .insert:
-            
-            break
-            //self.tableView.insertRows(at: [newIndexPath!], with: .automatic)
-        case .delete:
-            break
-            //self.tableView.deleteRows(at: [indexPath!], with: .automatic)
-        default:
-            break
+    //This function is used to fetch all data from coredata
+    private func fetchHeadLinesModelFromCoreDataEntity() -> Bool {
+        do {
+            try self.fetchedhResultController.performFetch()
+            if let nsObjectHeadlinesModel = fetchedhResultController.fetchedObjects?.first as? HeadLines {
+                var headlines = HeadLinesModel.init()
+                headlines.articles = nsObjectHeadlinesModel.ariclesArray
+                headlines.status = nsObjectHeadlinesModel.status
+                self.headLineModel = headlines
+                return true
+            }
+        } catch {
+            print("ERROR: \(error)")
         }
+        return false
     }
+
 }
+

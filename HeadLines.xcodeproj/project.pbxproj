@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1915451522EC96370049ECD5 /* HeadLines+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1915451322EC96370049ECD5 /* HeadLines+CoreDataClass.swift */; };
+		1915451622EC96370049ECD5 /* HeadLines+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1915451422EC96370049ECD5 /* HeadLines+CoreDataProperties.swift */; };
 		1995182322E82ED2007CC79B /* HeadLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995182122E82ED2007CC79B /* HeadLinesViewController.swift */; };
 		1995182422E82ED2007CC79B /* HeadLinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1995182222E82ED2007CC79B /* HeadLinesViewController.xib */; };
 		1995182622E82EF3007CC79B /* HeadLinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995182522E82EF3007CC79B /* HeadLinesViewModel.swift */; };
@@ -22,9 +24,6 @@
 		1995183E22E857EC007CC79B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995183D22E857EC007CC79B /* NetworkManager.swift */; };
 		1995184122E867CF007CC79B /* HeadLinesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995184022E867CF007CC79B /* HeadLinesModel.swift */; };
 		19A9DBDD22E963BA003EDE0F /* HeadlinesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19A9DBDB22E963BA003EDE0F /* HeadlinesDataModel.xcdatamodeld */; };
-		19A9DBE622E9694C003EDE0F /* Source+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9DBE022E9694C003EDE0F /* Source+CoreDataProperties.swift */; };
-		19A9DBE822E9694C003EDE0F /* HeadLines+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9DBE222E9694C003EDE0F /* HeadLines+CoreDataProperties.swift */; };
-		19A9DBEA22E9694C003EDE0F /* Articles+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9DBE422E9694C003EDE0F /* Articles+CoreDataProperties.swift */; };
 		19A9DBEC22E97C57003EDE0F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9DBEB22E97C57003EDE0F /* CoreDataStack.swift */; };
 		19C1637822E9C0E300510050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C1637722E9C0E300510050 /* Main.storyboard */; };
 		B6838F7022E6B920004C6368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6838F6F22E6B920004C6368 /* AppDelegate.swift */; };
@@ -57,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1915451322EC96370049ECD5 /* HeadLines+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeadLines+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1915451422EC96370049ECD5 /* HeadLines+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeadLines+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1995182122E82ED2007CC79B /* HeadLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesViewController.swift; sourceTree = "<group>"; };
 		1995182222E82ED2007CC79B /* HeadLinesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadLinesViewController.xib; sourceTree = "<group>"; };
 		1995182522E82EF3007CC79B /* HeadLinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesViewModel.swift; sourceTree = "<group>"; };
@@ -72,9 +73,6 @@
 		1995183D22E857EC007CC79B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1995184022E867CF007CC79B /* HeadLinesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadLinesModel.swift; sourceTree = "<group>"; };
 		19A9DBDC22E963BA003EDE0F /* HeadlinesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HeadlinesDataModel.xcdatamodel; sourceTree = "<group>"; };
-		19A9DBE022E9694C003EDE0F /* Source+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Source+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		19A9DBE222E9694C003EDE0F /* HeadLines+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeadLines+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		19A9DBE422E9694C003EDE0F /* Articles+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Articles+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		19A9DBEB22E97C57003EDE0F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		19C1637722E9C0E300510050 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B6838F6C22E6B920004C6368 /* HeadLines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeadLines.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,9 +179,8 @@
 		19A9DBDE22E963C9003EDE0F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				19A9DBE022E9694C003EDE0F /* Source+CoreDataProperties.swift */,
-				19A9DBE222E9694C003EDE0F /* HeadLines+CoreDataProperties.swift */,
-				19A9DBE422E9694C003EDE0F /* Articles+CoreDataProperties.swift */,
+				1915451322EC96370049ECD5 /* HeadLines+CoreDataClass.swift */,
+				1915451422EC96370049ECD5 /* HeadLines+CoreDataProperties.swift */,
 				19A9DBDB22E963BA003EDE0F /* HeadlinesDataModel.xcdatamodeld */,
 				19A9DBEB22E97C57003EDE0F /* CoreDataStack.swift */,
 			);
@@ -400,18 +397,17 @@
 				19A9DBDD22E963BA003EDE0F /* HeadlinesDataModel.xcdatamodeld in Sources */,
 				1995184122E867CF007CC79B /* HeadLinesModel.swift in Sources */,
 				19A9DBEC22E97C57003EDE0F /* CoreDataStack.swift in Sources */,
+				1915451522EC96370049ECD5 /* HeadLines+CoreDataClass.swift in Sources */,
 				B6838FA322E6BC9A004C6368 /* Utility.swift in Sources */,
-				19A9DBEA22E9694C003EDE0F /* Articles+CoreDataProperties.swift in Sources */,
 				B6838F7422E6B920004C6368 /* ViewController.swift in Sources */,
 				1995182A22E82F24007CC79B /* HeadLineDetailViewController.swift in Sources */,
-				19A9DBE622E9694C003EDE0F /* Source+CoreDataProperties.swift in Sources */,
 				B6838FA522E6BCC3004C6368 /* ImageDownLoader.swift in Sources */,
 				B6838F7022E6B920004C6368 /* AppDelegate.swift in Sources */,
 				1995182D22E82F54007CC79B /* HeadLineDetailViewModel.swift in Sources */,
 				1995182622E82EF3007CC79B /* HeadLinesViewModel.swift in Sources */,
 				B6838F7222E6B920004C6368 /* SceneDelegate.swift in Sources */,
 				1995182322E82ED2007CC79B /* HeadLinesViewController.swift in Sources */,
-				19A9DBE822E9694C003EDE0F /* HeadLines+CoreDataProperties.swift in Sources */,
+				1915451622EC96370049ECD5 /* HeadLines+CoreDataProperties.swift in Sources */,
 				1995183222E82FAF007CC79B /* HeadLinesCollectionViewCell.swift in Sources */,
 				B6838FA122E6BC82004C6368 /* AppManager.swift in Sources */,
 			);
@@ -578,6 +574,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SYLNKVDPN7;
 				INFOPLIST_FILE = HeadLines/Info.plist;
@@ -586,8 +583,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manas.HeadLines;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manas.HeadLines1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -597,6 +595,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SYLNKVDPN7;
 				INFOPLIST_FILE = HeadLines/Info.plist;
@@ -605,8 +604,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.manas.HeadLines;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manas.HeadLines1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
