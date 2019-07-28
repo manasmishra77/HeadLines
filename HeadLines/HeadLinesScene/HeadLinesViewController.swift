@@ -20,11 +20,12 @@ class HeadLinesViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        viewModel = HeadLinesViewModel()
         configureViews()
     }
     
     private func configureViews() {
-        viewModel = HeadLinesViewModel()
+        self.heightOfHeaderview.constant = Size.HeadlinesVC.navigationBarHeight
         self.configureCollectionView()
         viewModel.fetchHeadLines { (isSuccess) in
             if isSuccess {
@@ -80,7 +81,8 @@ extension HeadLinesViewController {
         let headlineDetailVC = HeadLineDetailViewController(article: article)
         self.addChild(headlineDetailVC)
         headlineDetailVC.view.alpha = 0
-        headlineDetailVC.view.frame = cell.frame
+        let cellOriginWRTToVC = self.headlinesCollectionView.convert(cell.frame, to: self.view)
+        headlineDetailVC.view.frame = cellOriginWRTToVC
         self.view.addSubview(headlineDetailVC.view)
         headlineDetailVC.didMove(toParent: self)
         headlineDetailVC.present()

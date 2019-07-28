@@ -21,6 +21,8 @@ class HeadLinesCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         applyGradientToImageGradientView()
+        self.newsImageView.clipsToBounds = true
+        self.layer.cornerRadius = Size.HeadlinesVC.cellCornerRadius
     }
     
     override func prepareForReuse() {
@@ -31,7 +33,7 @@ class HeadLinesCollectionViewCell: UICollectionViewCell {
     
     func configureCell(_ article: Articles?) {
         newsHeadingLabel.text = article?.title
-        newsSourceLabel.text = article?.author
+        newsSourceLabel.text = article?.source?.name
         newsDateLabel.text = Utility.convertUTCDateToDateString(article?.publishedAt)
         if let imageUrlString = article?.urlToImage, let imageUrl = URL(string: imageUrlString) {
             newsImageView.kf.setImage(with: imageUrl)
@@ -40,6 +42,7 @@ class HeadLinesCollectionViewCell: UICollectionViewCell {
     
     //Applying gradient to Image
     private func applyGradientToImageGradientView() {
+        self.newsImageGradientView.clipsToBounds = true
         guard let gradientLayer = self.newsImageGradientView.layer as? CAGradientLayer  else { return }
         gradientLayer.applyGradient(initialColor: UIColor.clear.cgColor, finalColor: UIColor.black.cgColor)
     }

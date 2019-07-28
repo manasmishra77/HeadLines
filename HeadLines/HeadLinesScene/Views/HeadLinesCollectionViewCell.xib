@@ -69,13 +69,18 @@
                             <constraint firstAttribute="trailing" secondItem="nRm-c0-DdX" secondAttribute="trailing" id="UoK-7E-Btp"/>
                             <constraint firstAttribute="bottom" secondItem="8zj-d9-Ab0" secondAttribute="bottom" constant="10" id="V3y-tb-QDn"/>
                             <constraint firstItem="nRm-c0-DdX" firstAttribute="top" secondItem="Rrq-Q4-Mkm" secondAttribute="top" id="XlI-qk-AoR"/>
-                            <constraint firstItem="rAd-Ho-wVD" firstAttribute="top" secondItem="8zj-d9-Ab0" secondAttribute="top" id="d8o-18-aWM"/>
                             <constraint firstItem="2gx-MQ-Qo5" firstAttribute="trailing" secondItem="nRm-c0-DdX" secondAttribute="trailing" id="h5k-9y-chN"/>
                             <constraint firstItem="2gx-MQ-Qo5" firstAttribute="bottom" secondItem="nRm-c0-DdX" secondAttribute="bottom" id="inJ-7U-uft"/>
+                            <constraint firstItem="rAd-Ho-wVD" firstAttribute="bottom" secondItem="8zj-d9-Ab0" secondAttribute="bottom" id="oWP-eR-HBF"/>
                             <constraint firstAttribute="trailing" secondItem="FpQ-lb-wSY" secondAttribute="trailing" constant="5" id="qmK-VF-oyG"/>
                             <constraint firstItem="FpQ-lb-wSY" firstAttribute="leading" secondItem="8zj-d9-Ab0" secondAttribute="leading" id="z4T-08-g5T"/>
                             <constraint firstItem="8zj-d9-Ab0" firstAttribute="top" secondItem="FpQ-lb-wSY" secondAttribute="bottom" constant="13" id="zo5-OQ-WGO"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>

@@ -14,5 +14,26 @@ class HeadLineDetailViewModel: NSObject {
         self.article = article
         super.init()
     }
+    
+    var headlines: String {
+        return article.title ?? ""
+    }
+    var publishingDate: String {
+        return Utility.convertUTCDateToDateString(article.publishedAt) ?? ""
+    }
+    var source: String {
+        return article.source?.name ?? ""
+    }
+    var contentDesc: String {
+        return article.descriptionOfContent ?? ""
+    }
+    
+    var bgImageUrl: URL? {
+        if let urlStr = article.urlToImage, let url = URL(string: urlStr) {
+            return url
+        }
+        return nil
+    }
+    
 
 }
