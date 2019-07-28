@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,7 +44,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EDt-pl-Nwa">
-                    <rect key="frame" x="0.0" y="90" width="414" height="772"/>
+                    <rect key="frame" x="16" y="90" width="382" height="772"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="es1-tm-qGy">
                         <size key="itemSize" width="50" height="50"/>
@@ -59,8 +57,8 @@
             <color key="backgroundColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="seY-42-9Ko" secondAttribute="trailing" id="2F9-hA-oxt"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EDt-pl-Nwa" secondAttribute="trailing" id="6e1-Ks-pg1"/>
-                <constraint firstItem="EDt-pl-Nwa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7M9-9F-5Ix"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EDt-pl-Nwa" secondAttribute="trailing" constant="16" id="6e1-Ks-pg1"/>
+                <constraint firstItem="EDt-pl-Nwa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="7M9-9F-5Ix"/>
                 <constraint firstItem="seY-42-9Ko" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Q1z-Xv-WNh"/>
                 <constraint firstItem="seY-42-9Ko" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gB4-o4-fcF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="EDt-pl-Nwa" secondAttribute="bottom" id="jcl-qq-w0f"/>

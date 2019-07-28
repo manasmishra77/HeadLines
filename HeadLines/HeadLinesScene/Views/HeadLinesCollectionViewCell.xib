@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,36 +35,44 @@
                                 <rect key="frame" x="0.0" y="0.0" width="363" height="133"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpQ-lb-wSY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gx-MQ-Qo5" customClass="ImageGradientView" customModule="HeadLines" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="363" height="133"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpQ-lb-wSY">
                                 <rect key="frame" x="10" y="67.5" width="348" height="26.5"/>
                                 <fontDescription key="fontDescription" name="RobotoSlab-Regular" family="Roboto Slab" pointSize="20"/>
                                 <color key="textColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zj-d9-Ab0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zj-d9-Ab0">
                                 <rect key="frame" x="10" y="107" width="31" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoSlab-Bold" family="Roboto Slab" pointSize="12"/>
                                 <color key="textColor" red="0.72941176470588232" green="0.72941176470588232" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAd-Ho-wVD">
-                                <rect key="frame" x="71" y="107" width="30" height="16"/>
+                                <rect key="frame" x="49" y="107" width="30" height="16"/>
                                 <fontDescription key="fontDescription" name="RobotoSlab-Thin" family="Roboto Slab" pointSize="12"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.72941176470588232" green="0.72941176470588232" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2gx-MQ-Qo5" firstAttribute="leading" secondItem="nRm-c0-DdX" secondAttribute="leading" id="6SJ-bM-Cqx"/>
                             <constraint firstAttribute="bottom" secondItem="nRm-c0-DdX" secondAttribute="bottom" id="I3x-pH-QPU"/>
                             <constraint firstItem="8zj-d9-Ab0" firstAttribute="leading" secondItem="Rrq-Q4-Mkm" secondAttribute="leading" constant="10" id="O1C-xa-ap1"/>
+                            <constraint firstItem="2gx-MQ-Qo5" firstAttribute="top" secondItem="nRm-c0-DdX" secondAttribute="top" id="TNI-Ke-b4U"/>
+                            <constraint firstItem="rAd-Ho-wVD" firstAttribute="leading" secondItem="8zj-d9-Ab0" secondAttribute="trailing" constant="8" id="Tdv-jc-Mvf"/>
                             <constraint firstItem="nRm-c0-DdX" firstAttribute="leading" secondItem="Rrq-Q4-Mkm" secondAttribute="leading" id="UGP-1o-Ejr"/>
                             <constraint firstAttribute="trailing" secondItem="nRm-c0-DdX" secondAttribute="trailing" id="UoK-7E-Btp"/>
                             <constraint firstAttribute="bottom" secondItem="8zj-d9-Ab0" secondAttribute="bottom" constant="10" id="V3y-tb-QDn"/>
                             <constraint firstItem="nRm-c0-DdX" firstAttribute="top" secondItem="Rrq-Q4-Mkm" secondAttribute="top" id="XlI-qk-AoR"/>
                             <constraint firstItem="rAd-Ho-wVD" firstAttribute="top" secondItem="8zj-d9-Ab0" secondAttribute="top" id="d8o-18-aWM"/>
+                            <constraint firstItem="2gx-MQ-Qo5" firstAttribute="trailing" secondItem="nRm-c0-DdX" secondAttribute="trailing" id="h5k-9y-chN"/>
+                            <constraint firstItem="2gx-MQ-Qo5" firstAttribute="bottom" secondItem="nRm-c0-DdX" secondAttribute="bottom" id="inJ-7U-uft"/>
                             <constraint firstAttribute="trailing" secondItem="FpQ-lb-wSY" secondAttribute="trailing" constant="5" id="qmK-VF-oyG"/>
-                            <constraint firstItem="rAd-Ho-wVD" firstAttribute="leading" secondItem="8zj-d9-Ab0" secondAttribute="trailing" constant="30" id="r2G-Hm-sfH"/>
                             <constraint firstItem="FpQ-lb-wSY" firstAttribute="leading" secondItem="8zj-d9-Ab0" secondAttribute="leading" id="z4T-08-g5T"/>
                             <constraint firstItem="8zj-d9-Ab0" firstAttribute="top" secondItem="FpQ-lb-wSY" secondAttribute="bottom" constant="13" id="zo5-OQ-WGO"/>
                         </constraints>
@@ -84,6 +90,7 @@
             <connections>
                 <outlet property="newsDateLabel" destination="rAd-Ho-wVD" id="Syx-Rv-yYR"/>
                 <outlet property="newsHeadingLabel" destination="FpQ-lb-wSY" id="frF-XB-oM5"/>
+                <outlet property="newsImageGradientView" destination="2gx-MQ-Qo5" id="uUo-E7-faA"/>
                 <outlet property="newsImageView" destination="nRm-c0-DdX" id="mxw-p4-ryw"/>
                 <outlet property="newsSourceLabel" destination="8zj-d9-Ab0" id="ilj-Kw-tVI"/>
             </connections>

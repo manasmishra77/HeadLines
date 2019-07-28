@@ -33,68 +33,22 @@ extension UIView {
     }
 }
 
-struct ImagesModel: Codable {
-    var image: UIImage?
-    var isInUse: Bool = false
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        if let image = image {
-            let imageData = UIImage.jpegData(image)
-            try container.encode(imageData, imageData: .image)
-        }
-        
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case image = "image"
-        case isInUse = "isInUse"
-    }
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        image = try values.decodeIfPresent(UIImage.self, forKey: .image)
-        isInUse = false
-    }
-    init() {
-        
-    }
-}
 
 class Utility {
     static let shared = Utility()
     private init() {}
     
-    var fileNameForImageCache: URL {
-        var path = self.getDocumentsDirectory()
-        let fileName = path.appendingPathComponent("imageCache")
-        return fileName
-    }
-    
-    let imageCache = NSCache<NSString, UIImage>()
     //Converting the datestring from server response to required fromat
     class func convertUTCDateToDateString(_ dateString: String?) -> String? {
         guard let dateString = dateString else { return nil }
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
         guard let date = dateFormatter.date(from: dateString) else { return nil }
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.timeZone = TimeZone.current
         let localString = dateFormatter.string(from: date)
         return localString
-    }
-    
-    //Saving NSCache array in Disk
-    func saveNSCacheArrayInDisk() {
-        do {
-            
-        } catch {
-            // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
-        }
-    }
-    
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
     }
     
    
@@ -107,8 +61,8 @@ struct Size {
             return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         }
         static var collectionViewItemSize: CGSize {
-            let width = screenWidth
-            let height: CGFloat = 300
+            let width = screenWidth - 32
+            let height: CGFloat = width*0.55
             return CGSize(width: width, height: height)
         }
         static var collectionViewLineSpacing: CGFloat {
@@ -118,5 +72,22 @@ struct Size {
     }
     struct HeadlineDetailVC {
         
+    }
+}
+
+// Add Gradient
+extension CAGradientLayer {
+    // MARK: Apply Gradient
+    func applyGradient(initialColor : CGColor, finalColor: CGColor) {
+        let initalColor  = initialColor
+        let finalColor = finalColor
+        
+        let colorsArray = [initalColor, finalColor]
+        let layer = self
+        layer.colors = colorsArray
+        layer.frame = self.bounds
+        layer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        layer.endPoint = CGPoint(x: 0.0, y: 1.0)
+//        self.layer.insertSublayer(layer, at: 0)
     }
 }
