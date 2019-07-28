@@ -15,6 +15,7 @@ class HeadLinesViewController: UIViewController {
     @IBOutlet weak var headlinesCollectionView: UICollectionView!
     
     var viewModel: HeadLinesViewModel!
+    var isToShowCascadingEffect: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +70,9 @@ extension HeadLinesViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.presentHeadLineDetailVC(indexPath: indexPath)
     }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        addCascadeAnimation(cell: cell, indexPath: indexPath)
+    }
     
     
 }
@@ -86,5 +90,19 @@ extension HeadLinesViewController {
         self.view.addSubview(headlineDetailVC.view)
         headlineDetailVC.didMove(toParent: self)
         headlineDetailVC.present()
+    }
+    
+    private func addCascadeAnimation(cell: UICollectionViewCell, indexPath: IndexPath) {
+        guard isToShowCascadingEffect else {return}
+        cell.transform = CGAffineTransform(translationX: 0, y: CGFloat(indexPath.row*20))
+        let timeDelay = Double(indexPath.row)/5
+        
+        UIView.animate(withDuration: 0.3, delay: TimeInterval(timeDelay), options: UIView.AnimationOptions.curveEaseInOut, animations: {
+                cell.transform = .identity
+            }, completion: { (_) in
+                if indexPath.item >= 3 {
+                    self.isToShowCascadingEffect = false
+                }
+            })
     }
 }
