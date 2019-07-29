@@ -30,14 +30,21 @@ class HeadLineDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         configureViews()
+        self.view.backgroundColor = .red
     }
     
     func present() {
         self.originFrame = self.view.frame
-        UIView.animate(withDuration: 0.3, animations: {
-            self.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-            self.view.alpha = 1
-        }) { (_) in
+        self.view.alpha = 0
+        toggleVisibilityOfIcon(toHide: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+                self.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+                self.view.superview?.layoutIfNeeded()
+                self.view.alpha = 1
+            }, completion: { (_) in
+                self.toggleVisibilityOfIcon(toHide: false)
+            })
         }
     }
     
@@ -46,10 +53,7 @@ class HeadLineDetailViewController: UIViewController {
     }
     
     func dismissVC() {
-        desrptionHeadlinesLabel.isHidden = true
-        sourceLabel.isHidden = true
-        dateLabel.isHidden = true
-        headlineLabel.isHidden = true
+        toggleVisibilityOfIcon(toHide: true)
         UIView.animate(withDuration: 0.3, animations: {
             self.view.frame = self.originFrame
             self.view.layoutIfNeeded()
@@ -61,7 +65,15 @@ class HeadLineDetailViewController: UIViewController {
         }
     }
     
+   private func toggleVisibilityOfIcon(toHide: Bool) {
+        desrptionHeadlinesLabel.isHidden = toHide
+        sourceLabel.isHidden = toHide
+        dateLabel.isHidden = toHide
+        headlineLabel.isHidden = toHide
+    }
+    
     private func configureViews() {
+        self.headlineDetailBGImageView.clipsToBounds = true
         self.applyGradientToImageGradientView()
         desrptionHeadlinesLabel.text = viewModel.contentDesc
         sourceLabel.text = viewModel.source
