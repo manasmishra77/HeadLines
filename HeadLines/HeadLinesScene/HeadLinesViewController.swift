@@ -84,7 +84,7 @@ extension HeadLinesViewController {
         guard let cell = self.headlinesCollectionView.cellForItem(at: indexPath) else {return}
         let headlineDetailVC = HeadLineDetailViewController(article: article)
         self.addChild(headlineDetailVC)
-        headlineDetailVC.view.alpha = 0
+        //headlineDetailVC.view.alpha = 0
         let cellOriginWRTToVC = self.headlinesCollectionView.convert(cell.frame, to: self.view)
         headlineDetailVC.view.frame = cellOriginWRTToVC
         self.view.addSubview(headlineDetailVC.view)
@@ -94,7 +94,7 @@ extension HeadLinesViewController {
     
     private func addCascadeAnimation(cell: UICollectionViewCell, indexPath: IndexPath) {
         guard isToShowCascadingEffect else {return}
-        cell.transform = CGAffineTransform(translationX: 0, y: CGFloat(indexPath.row*20))
+        cell.transform = CGAffineTransform(translationX: 0, y: CGFloat(indexPath.row*40))
         let timeDelay = Double(indexPath.row)/5
         
         UIView.animate(withDuration: 0.3, delay: TimeInterval(timeDelay), options: UIView.AnimationOptions.curveEaseInOut, animations: {
